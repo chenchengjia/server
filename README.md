@@ -1,6 +1,6 @@
 # server
 
-1.解压node_modules.7z到当前目录
+1.解压node_modules.zip到当前目录
 
 2.自己下载并打开mongo数据库服务器
 
