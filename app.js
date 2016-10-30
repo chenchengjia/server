@@ -14,7 +14,9 @@ var users = require('./routes/users');
 global.dbHandel = require('./database/dbHandel');
 global.db = mongoose.connect("mongodb://localhost:27017/nodedb");
 var app = express();
-app.use(session({ 
+app.use(session({
+    resave: true,
+    saveUninitialized: true,
 	secret: 'secret',
 	cookie:{ 
 		maxAge: 1000*60*30
@@ -54,6 +56,7 @@ app.use('/home',routes); // 即为为路径 /home 设置路由
 app.use("/logout",routes); // 即为为路径 /logout 设置路由
 app.use("/upload", routes); //即为为路径 /upload 设置路由
 app.use("/uploaded", routes); //即为为路径 /uploaded 设置路由
+app.use("/read", routes); //即为为路径 /read 设置路由
 
 
 
