@@ -99,6 +99,10 @@ router.get("/upload", function (req, res) {
     res.render('upload', { title: 'upload' });
 });
 
+router.get("/uplocation", function (req, res) {
+    res.render('uplocation', { title: 'uplocation' });
+});
+
 
 
 /* GET upload page. */
@@ -155,6 +159,26 @@ router.get("/read", function (req, res) {
        
 
     });
+});
+
+
+
+router.post("/locationup", function (req, res) {
+    var obj = req.body.locationup;
+    username = req.session.user.name;
+    var location_up = global.dbHandel.getModel('location_up');
+    location_up.create({
+        name: username,
+        coordinate: obj
+    }, function (err, doc) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("sucessed");
+        }
+    });
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end('上传成功');
 });
 
 

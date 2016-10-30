@@ -57,6 +57,9 @@ app.use("/logout",routes); // 即为为路径 /logout 设置路由
 app.use("/upload", routes); //即为为路径 /upload 设置路由
 app.use("/uploaded", routes); //即为为路径 /uploaded 设置路由
 app.use("/read", routes); //即为为路径 /read 设置路由
+app.use("/locationup", routes); //即为为路径 /locationup 设置路由
+app.use("/uplocation", routes); //即为为路径 /locationup 设置路由
+
 
 
 
