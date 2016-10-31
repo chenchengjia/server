@@ -1,4 +1,4 @@
-var express = require('express');
+﻿var express = require('express');
 var router = express.Router();
 var fs = require("fs");
 var multiparty = require('multiparty');
@@ -108,7 +108,7 @@ router.get("/uplocation", function (req, res) {
 /* GET upload page. */
 router.post("/uploaded", function (req, res) {    // 到达此路径则渲染upload文件
     var username = req.session.user.name;
-    var obj = req.files.inputFile;
+    var obj = req.files.uploaded;
     var tmp_path = obj.path;
     var new_path = "c:/tmp/" + username+'/'+ obj.name;
     fs.rename(tmp_path, new_path, function (err) {
